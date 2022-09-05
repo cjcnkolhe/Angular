@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+    
+    <div class="form-group col-md-6">
+          <input type="text" class="form-control"  placeholder="Enter first name" [(ngModel)]="cs.e.name">
+      </div>
+      <div class="form-group col-md-6">
+          <input type="text" class="form-control"  placeholder="Enter User name" [(ngModel)]="cs.e.uname">
+      </div>
+    
+    </div>
+    
+    <div class="form-group">
+        <input type="text" class="form-control"  placeholder="Enter Password" [(ngModel)]="cs.e.password">
+    </div>
+    
+      <div class="form-group"> 
+          <button class="btn btn-success btn-lg btn-block" (click)="submitData(cs.e)">Submit</button>
+      </div>
+    
+      <div class="form-group"> 
+          <button class="btn btn-warning btn-lg btn-block" (click)="resetData()">reset</button>
+      </div>
+    </div>

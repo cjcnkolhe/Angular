@@ -1,0 +1,29 @@
+<div class="container">
+  <input class="form-control" type="text" name="uname" [(ngModel)]="uname" (ngModelChange)="search()"
+    placeholder="Search by UserName" >
+    <table class="table table-striped">
+      <tbody>
+        <th (click)="sort('id')" style="width: 50px;">Id<i class="fa fa-sort"></i></th>
+
+        <th>NAME</th>
+        <TH>UNAME</TH>
+        <TH>PASSWORD</TH>
+        <tr *ngFor="let e of emplist | orderBy:key:reverse | paginate :{itemsPerPage:2,currentPage:p}">
+          <td>{{e.id}}</td>
+          <td>{{e.name}}</td>
+          <td>{{e.uname}}</td>
+          <td>{{e.password}}</td>
+          <td><a class="btn" (click)="editData(e)">
+              <i class="fa fa-edit"></i>
+            </a>
+          </td>
+          <td><a class="btn" (click)="deleteData(e.id)">
+              <i class="fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+     
+    </table>
+    <div style="text-align: right;"><pagination-controls (pageChange)="p = $event"> </pagination-controls ></div>
+  </div>
